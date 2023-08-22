@@ -2,8 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-const meta = {
+const meta: Meta<typeof Button> = {
   title: 'Example/Button',
   component: Button,
   parameters: {
@@ -14,37 +13,76 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    label: { description: 'ボタンの文字' },
+    color: { control: 'color', description: 'ボタンの文字色' },
+    backgroundColor: { description: 'ボタンの背景色' },
+    size: { description: 'ボタンのサイズ' },
+    isDisabled: { description: 'ボタンのdisabled' },
+    onClick: { description: 'クリックイベント' },
   },
-} satisfies Meta<typeof Button>;
-
+};
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+type Story = StoryObj<typeof Button>;
+
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    label: 'Primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    label: 'Secondary',
+    backgroundColor: 'secondary',
   },
 };
 
-export const Large: Story = {
+export const Error: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    label: 'Error',
+    backgroundColor: 'error',
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    label: 'Warning',
+    backgroundColor: 'warning',
+  },
+};
+
+export const Info: Story = {
+  args: {
+    label: 'Info',
+    backgroundColor: 'info',
+  },
+};
+
+export const Success: Story = {
+  args: {
+    label: 'Success',
+    backgroundColor: 'success',
   },
 };
 
 export const Small: Story = {
   args: {
     size: 'small',
-    label: 'Button',
+    label: 'Small',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    size: 'medium',
+    label: 'Medium',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+    label: 'Large',
   },
 };
