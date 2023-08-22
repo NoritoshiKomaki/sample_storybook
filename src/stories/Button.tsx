@@ -31,7 +31,7 @@ const buttonColorObj: Readonly<ButtonColorObj> = {
 };
 
 export const Button = ({
-  color = '#000',
+  color = '#FFF',
   size = 'medium',
   backgroundColor = 'primary',
   label,
