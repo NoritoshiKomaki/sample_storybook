@@ -1,6 +1,6 @@
 import './button.css';
 
-type BackgroundColor =
+type ButtonTheme =
   | 'primary'
   | 'secondary'
   | 'error'
@@ -9,12 +9,12 @@ type BackgroundColor =
   | 'success';
 
 type ButtonColorObj = {
-  [key in BackgroundColor]: `#${string}`;
+  [key in ButtonTheme]: `#${string}`;
 };
 
 interface ButtonProps {
   color?: string;
-  backgroundColor?: BackgroundColor;
+  theme?: ButtonTheme;
   size?: 'small' | 'medium' | 'large';
   label: string;
   isDisabled?: boolean;
@@ -33,7 +33,7 @@ const buttonColorObj: Readonly<ButtonColorObj> = {
 export const Button = ({
   color = '#FFF',
   size = 'medium',
-  backgroundColor = 'primary',
+  theme = 'primary',
   label,
   isDisabled,
   ...props
@@ -44,7 +44,7 @@ export const Button = ({
       className={['storybook-button', `storybook-button--${size}`].join(' ')}
       style={{
         color,
-        backgroundColor: isDisabled ? 'gray' : buttonColorObj[backgroundColor],
+        backgroundColor: isDisabled ? 'gray' : buttonColorObj[theme],
         opacity: isDisabled ? 0.5 : 1,
       }}
       disabled={isDisabled}

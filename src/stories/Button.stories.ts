@@ -15,7 +15,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     label: { description: 'ボタンの文字' },
     color: { control: 'color', description: 'ボタンの文字色' },
-    backgroundColor: { description: 'ボタンの背景色' },
+    theme: { description: 'ボタンの背景色' },
     size: { description: 'ボタンのサイズ' },
     isDisabled: { description: 'ボタンのdisabled' },
     onClick: { description: 'クリックイベント' },
@@ -34,35 +34,35 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     label: 'Secondary',
-    backgroundColor: 'secondary',
+    theme: 'secondary',
   },
 };
 
 export const Error: Story = {
   args: {
     label: 'Error',
-    backgroundColor: 'error',
+    theme: 'error',
   },
 };
 
 export const Warning: Story = {
   args: {
     label: 'Warning',
-    backgroundColor: 'warning',
+    theme: 'warning',
   },
 };
 
 export const Info: Story = {
   args: {
     label: 'Info',
-    backgroundColor: 'info',
+    theme: 'info',
   },
 };
 
 export const Success: Story = {
   args: {
     label: 'Success',
-    backgroundColor: 'success',
+    theme: 'success',
   },
 };
 
